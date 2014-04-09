@@ -26,7 +26,7 @@ namespace TemplateJeu
         }
 
        abstract public void navigation(KeyboardState kbs);  
-       
+
        override public void Draw()
        {
             foreach (Bouton bn in bnBox)
@@ -38,6 +38,7 @@ namespace TemplateJeu
                 Cur.Draw();
             }            
         }
+
         override public void Update()
         {
             foreach (Bouton bn in bnBox)
