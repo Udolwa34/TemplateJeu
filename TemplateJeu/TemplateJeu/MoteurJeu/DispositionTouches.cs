@@ -8,15 +8,16 @@ namespace TemplateJeu.MoteurJeu
 {
     class DispositionTouches
     {
-        public Keys Touche1;
-        public Keys Touche2;
-        public Keys Touche3;
-        public Keys Touche4;
-        public Keys Touche5;
-        public Keys Touche6;
+        public Keys ToucheHaut, ToucheBas, ToucheGauche, ToucheDroite;
+        public Keys Touche1, Touche2, Touche3, Touche4, Touche5, Touche6;
 
-        public DispositionTouches(Keys tch1, Keys tch2, Keys tch3, Keys tch4, Keys tch5, Keys tch6)
+        public DispositionTouches(Keys tchH, Keys tchB, Keys tchG, Keys tchD,
+            Keys tch1, Keys tch2, Keys tch3, Keys tch4, Keys tch5, Keys tch6)
         {
+            ToucheHaut = tchH;
+            ToucheBas = tchB;
+            ToucheGauche = tchG;
+            ToucheDroite = tchD;
             Touche1 = tch1;
             Touche2 = tch2;
             Touche3 = tch3;
@@ -27,7 +28,8 @@ namespace TemplateJeu.MoteurJeu
 
         public void AssignerTouches(int numTouche, Keys newTouche)
         {
-            Keys[] tabKeys = new Keys[6] { Touche1, Touche2, Touche3, Touche4, Touche5, Touche6 };
+            Keys[] tabKeys = new Keys[10] { ToucheHaut, ToucheBas, ToucheGauche, ToucheDroite,
+                                          Touche1, Touche2, Touche3, Touche4, Touche5, Touche6 };
             tabKeys[numTouche - 1] = newTouche;  
         }
     }
