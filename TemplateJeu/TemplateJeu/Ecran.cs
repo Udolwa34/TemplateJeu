@@ -13,7 +13,7 @@ namespace TemplateJeu
         private Rectangle position;
         private bool print;
         private string nom;
-
+        
         public Ecran(string nom, Rectangle position, Texture2D design)
         {
             this.nom = nom;
@@ -58,12 +58,8 @@ namespace TemplateJeu
         public void UnloadContent()
         {
         }*/
-        public void Update()
-        {
-        }
-        public void Draw()
-        {
-        }
+        abstract public void Update();
+        abstract public void Draw();
 
     }
 }

@@ -9,7 +9,7 @@ using System.Text;
 
 namespace TemplateJeu.MoteurJeu
 {
-    static class MoteurDeJeu
+    class MoteurDeJeu
     {
         public SpriteBatch spriteBatch;
         public GameTime gameTime;
