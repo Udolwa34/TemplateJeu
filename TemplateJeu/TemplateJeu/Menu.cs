@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.GamerServices;
 
 namespace TemplateJeu
 {
-    abstract class Menu : Ecran
+     abstract class Menu : Ecran
     {
         protected List<Bouton> bnBox;
         protected List<Curseur> listCurseurs;
@@ -26,9 +26,9 @@ namespace TemplateJeu
         }
 
        abstract public void navigation(KeyboardState kbs);  
-
-       abstract public void Draw()
-        {
+       
+       override public void Draw()
+       {
             foreach (Bouton bn in bnBox)
             {
                 bn.Draw();
@@ -38,8 +38,7 @@ namespace TemplateJeu
                 Cur.Draw();
             }            
         }
-
-        public void Update()
+        override public void Update()
         {
             foreach (Bouton bn in bnBox)
             {
