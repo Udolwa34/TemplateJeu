@@ -1,27 +1,29 @@
-﻿#region Using Statements
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Storage;
-using Microsoft.Xna.Framework.GamerServices;
-#endregion
+using System.Linq;
+using System.Text;
 
 namespace TemplateJeu
 {
-    class Curseur
+    class Bouton
     {
         private Texture2D design;
         private Rectangle position;
+        private string nom;
 
-        public Curseur(Texture2D _design, Rectangle _position)
+        public Bouton(Texture2D _design, Rectangle _position, string _nom)
         {
+            nom = _nom;
             design = _design;
             position = _position;
         }
 
+        public string getNom()
+        {
+            return this.nom;
+        }
         public Texture2D getDesign()
         {
             return this.design;
@@ -41,14 +43,27 @@ namespace TemplateJeu
         }
         public void UnloadContent()
         {
-        }*/
+        }
         public void Update()
         {
         }
         public void Draw()
         {
+        }*/
+
+        public void onClick()
+        {
+            string nom = this.getNom();
+            /*if (nom == "Bouton1")
+            {
+            }*/
         }
-
     }
-
 }
+
+/*
+(abstract) Bouton
+
+
++ onClick () :  (event, tout ça )
+ */
