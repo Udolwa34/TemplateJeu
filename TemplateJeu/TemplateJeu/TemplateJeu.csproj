@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="Bouton.cs" />
     <Compile Include="Curseur.cs" />
+    <Compile Include="Ecran.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="MoteurJeu\DispositionTouches.cs" />
     <Compile Include="MoteurJeu\MoteurDeJeu.cs" />
