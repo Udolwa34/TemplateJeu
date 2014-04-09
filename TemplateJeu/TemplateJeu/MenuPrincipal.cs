@@ -17,6 +17,15 @@ namespace TemplateJeu
             : base(nom,position,design)
         {
         }
+
+        public override void fillBnBox()
+        {
+            //bnBox.Add(new Bouton());
+        }
+        public override void fillListCurseurs()
+        {
+
+        }
         public override void Update()
         {
             base.Update();

@@ -1,6 +1,7 @@
 ﻿#region Using Statements
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using TemplateJeu.MoteurJeu;
 
 #endregion
 
@@ -17,6 +18,11 @@ namespace TemplateJeu
             position = _position;
         }
 
+        public Curseur(string _design, Rectangle _position)
+        {
+            position = _position;
+            LoadContent(_design);
+        }
         public Texture2D getDesign()
         {
             return this.design;
@@ -30,10 +36,11 @@ namespace TemplateJeu
             position = newPosition;
         }
 
-        /*
-        public void LoadContent()
-        {         
+        public void LoadContent(string nomCur)
+        {
+            design = MoteurDeJeu.InstanceMDJ.contentManager.Load<Texture2D>(MoteurDeJeu.InstanceMDJ.CheminRessourcesTextures + nomCur);
         }
+        /*
         public void UnloadContent()
         {
         }*/

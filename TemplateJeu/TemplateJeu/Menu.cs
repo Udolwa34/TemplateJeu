@@ -25,8 +25,10 @@ namespace TemplateJeu
             listCurseurs = new List<Curseur>();
         }
 
-       abstract public void navigation(KeyboardState kbs);  
+       abstract public void navigation(KeyboardState kbs);
 
+       abstract public void fillBnBox();
+       abstract public void fillListCurseurs();
        override public void Draw()
        {
             foreach (Bouton bn in bnBox)
@@ -39,7 +41,7 @@ namespace TemplateJeu
             }            
         }
 
-        override public void Update()
+       override public void Update()
         {
             foreach (Bouton bn in bnBox)
             {
