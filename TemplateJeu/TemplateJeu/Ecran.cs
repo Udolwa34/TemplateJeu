@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TemplateJeu.MoteurJeu;
 
 namespace TemplateJeu
 {
@@ -14,12 +15,16 @@ namespace TemplateJeu
         private bool print;
         private string nom;
         
-        public Ecran(string nom, Rectangle position, Texture2D design)
+        public Ecran(string nom, Rectangle position, string design)
         {
             this.nom = nom;
             this.position = position;
-            this.design = design;
             print = true;
+            LoadContent(design);
+        }
+        public void LoadContent(string nomBG)
+        {
+            design = MoteurDeJeu.InstanceMDJ.contentManager.Load<Texture2D>(MoteurDeJeu.InstanceMDJ.CheminRessourcesTextures+nomBG);
         }
 
         public void setPrint(bool print)
@@ -51,10 +56,8 @@ namespace TemplateJeu
         {
             this.position = position;
         }
+        
         /*
-        public void LoadContent()
-        {         
-        }
         public void UnloadContent()
         {
         }*/

@@ -13,7 +13,7 @@ namespace TemplateJeu
 {
     class MenuPrincipal : Menu
     {
-        public MenuPrincipal(string nom, Rectangle position, Texture2D design)
+        public MenuPrincipal(string nom, Rectangle position, string design)
             : base(nom,position,design)
         {
         }
