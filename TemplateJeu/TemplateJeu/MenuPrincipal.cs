@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
+using TemplateJeu.MoteurJeu;
 #endregion
 
 namespace TemplateJeu
@@ -20,18 +21,18 @@ namespace TemplateJeu
 
         public override void fillBnBox()
         {
-            bnBox.Add(new Bouton("firstOne", new Rectangle(100, 100, 50, 25), "commencer"));
-            bnBox.Add(new Bouton("Scond", new Rectangle(100, 150, 50, 25), "option"));
+            bnBox.Add(new Bouton("commencer", new Rectangle(100, 100, 50, 25), "commencer"));
+            bnBox.Add(new Bouton("option", new Rectangle(100, 150, 50, 25), "option"));
         }
         public override void fillListCurseurs()
         {
-            listCurseurs.Add(new Curseur("pointeur", new Rectangle(65, 100, 25, 25)));
+            listCurseurs.Add(new Curseur(MoteurDeJeu.InstanceMDJ.panelTextures[0],bnBox[0].defPositionCurseurFleche(-30,0,20,20 )));
         }
-        public override void Update()
+        override public void Update()
         {
             base.Update();
         }
-        public override void Draw()
+        override public void Draw()
         {
             base.Draw();
         }

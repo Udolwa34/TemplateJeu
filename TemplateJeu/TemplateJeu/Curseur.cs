@@ -49,6 +49,7 @@ namespace TemplateJeu
         }
         public void Draw()
         {
+            MoteurDeJeu.InstanceMDJ.spriteBatch.Draw(design, position, Color.White);
         }
 
     }

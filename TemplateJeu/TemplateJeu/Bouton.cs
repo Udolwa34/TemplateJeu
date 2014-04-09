@@ -34,6 +34,23 @@ namespace TemplateJeu
             position = newPosition;
         }
 
+        public Rectangle defPositionCurseurEncadre(int x, int y)
+        {
+            Rectangle leRect = getPosition();
+            leRect.X += x;
+            leRect.Y += y;
+            return leRect;
+        }
+        public Rectangle defPositionCurseurFleche(int x, int y, int Width, int Height )
+        {
+            Rectangle leRect = getPosition();
+            leRect.X += x;
+            leRect.Y += y;
+            leRect.Width = Width;
+            leRect.Height = Height;
+            return leRect;
+        }
+
         
         public void LoadContent(string nomBn)
         {
@@ -47,6 +64,7 @@ namespace TemplateJeu
         }
         public void Draw()
         {
+            MoteurDeJeu.InstanceMDJ.spriteBatch.Draw(design, position, Color.White);
         }
 
         public void onClick()
@@ -58,10 +76,3 @@ namespace TemplateJeu
         }
     }
 }
-
-/*
-(abstract) Bouton
-
-
-+ onClick () :  (event, tout ça )
- */
