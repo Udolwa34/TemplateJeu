@@ -2,10 +2,8 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace TemplateJeu.MoteurJeu
 {
@@ -35,19 +33,20 @@ namespace TemplateJeu.MoteurJeu
         }
 
         //Méthodes persos
-        private void defineDispositionTouches()
+
+        private void defineDispositionTouches() // Définit les touches à utiliser pour chacun des joueurs.
         {
             panelTouches.Add(new DispositionTouches(Keys.Up, Keys.Down,Keys.Left,Keys.Right,
                                                     Keys.A,Keys.Z,Keys.E,Keys.Q,Keys.S,Keys.D));
             panelTouches.Add(new DispositionTouches(Keys.D5, Keys.D2, Keys.D1, Keys.D3,
                                                     Keys.NumLock, Keys.Divide, Keys.Multiply, Keys.D7, Keys.D8, Keys.D9));
         }
-        private void definePolices()
+        private void definePolices() //Definit le nom des ressources-polices à charger pour toute l'application
         {
             strPanelPolices.Add("nomDeMaFont");
 
         }
-        private void defineTextures()
+        private void defineTextures() // Definit le nom des ressources-textures à charger pour toute l'application
         {
             strPanelTextures.Add("maTexture");
         }
