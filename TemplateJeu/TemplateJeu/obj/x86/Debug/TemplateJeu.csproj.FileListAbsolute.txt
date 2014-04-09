@@ -23,3 +23,5 @@ C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows
 C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\obj\x86\Debug\TemplateJeu.exe
 C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\obj\x86\Debug\TemplateJeu.pdb
+C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJeu\obj\x86\Debug\TemplateJeu.exe
+C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJeu\obj\x86\Debug\TemplateJeu.pdb
