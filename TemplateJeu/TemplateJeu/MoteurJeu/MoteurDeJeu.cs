@@ -52,11 +52,11 @@ namespace TemplateJeu.MoteurJeu
         }
         private void definePolices() //Definit le nom des ressources-polices à charger pour toute l'application
         {
-            strPanelPolices.Add(CheminRessourcesFont+"nomDeMaFont");
+            //strPanelPolices.Add(CheminRessourcesFont+"nomDeMaFont");
         }
         private void defineTextures() // Definit le nom des ressources-textures à charger pour toute l'application
         {
-            strPanelTextures.Add(CheminRessourcesTextures+"maTexture");
+            strPanelTextures.Add(CheminRessourcesTextures+"leCurseur");
         }
 
         //Méthodes MonoGame

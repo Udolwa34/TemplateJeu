@@ -48,3 +48,7 @@ C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJ
 C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJeu\obj\x86\Debug\TemplateJeu.exe
 C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJeu\obj\x86\Debug\TemplateJeu.pdb
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\commencer.jpg
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\leCurseur.png
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menu.jpg
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\option.jpg

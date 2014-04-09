@@ -10,7 +10,7 @@ namespace TemplateJeu
 {
     abstract class Ecran
     {
-        private Texture2D design;
+        protected Texture2D design;
         private Rectangle position;
         private bool print;
         private string nom;
@@ -61,8 +61,15 @@ namespace TemplateJeu
         public void UnloadContent()
         {
         }*/
-        abstract public void Update();
-        abstract public void Draw();
+        
+        virtual public void Update()
+        {
+        }
+        virtual public void Draw()
+        {
+            MoteurDeJeu.InstanceMDJ.spriteBatch.Draw(design, position, Color.White);
+        }
+        
 
     }
 }

@@ -59,9 +59,9 @@ namespace TemplateJeu
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.DarkBlue);
-
+            spriteBatch.Begin();
             screenManager.Draw();
-
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
