@@ -37,7 +37,7 @@ namespace TemplateJeu
             position = newPosition;
         }
 
-        /*
+        
         public void LoadContent()
         {         
         }
@@ -49,7 +49,7 @@ namespace TemplateJeu
         }
         public void Draw()
         {
-        }*/
+        }
 
         public void onClick()
         {
