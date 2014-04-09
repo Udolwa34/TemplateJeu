@@ -7,19 +7,19 @@ namespace TemplateJeu
 {
     class PileEcran
     {
-        private List<long> Ecrans;
+        private List<Ecran> Ecrans;
 
         public PileEcran() 
         {
-            Ecrans = new List<long>();
+            Ecrans = new List<Ecran>();
         }
 
-        public long getLast()
+        public Ecran getLast()
         {
             return Ecrans.Last();
         }
 
-        public void empiler(long nvo)
+        public void empiler(Ecran nvo)
         {
             Ecrans.Add(nvo);
         }
@@ -37,22 +37,22 @@ namespace TemplateJeu
 
         public void toMenu()
         {
-            while (Ecrans.Last().nom != "Menu")
+            while (Ecrans.Last().getNom() != "Menu")
             {
                 depiler();
             }
         }
 
-        public void draw()
+        public void Draw()
         {
-            foreach (long Scr in Ecrans)
-                if (Scr.print == true)
-                    Scr.draw();
+            foreach (Ecran Scr in Ecrans)
+                if (Scr.getPrint() == true)
+                    Scr.Draw();
         }
 
-        public void update()
+        public void Update()
         {
-            Ecrans.Last().update();
+            Ecrans.Last().Update();
         }
     }
 }
