@@ -7,21 +7,30 @@ using System.Linq;
 
 namespace TemplateJeu.MoteurJeu
 {
-    static class MoteurDeJeu
+    class MoteurDeJeu
     {
+        static private MoteurDeJeu instanceMDJ;
+
+        static public MoteurDeJeu InstanceMDJ
+        {
+            get {
+                if (instanceMDJ == null)
+                    instanceMDJ = new MoteurDeJeu();
+                return instanceMDJ;
+            }
+        }
+        
         public SpriteBatch spriteBatch;
-        public GameTime gameTime;
         public ContentManager contentManager;
         public List<DispositionTouches> panelTouches;
         public List<SpriteFont> panelPolices; private List<string> strPanelPolices;
         public List<Texture2D> panelTextures; private List<string> strPanelTextures;
+        string CheminRessourcesFont = "Polices/";
+        string CheminRessourcesTextures = "Textures/";
 
         //Constructeur
-        public MoteurDeJeu(SpriteBatch spr, GameTime gm, ContentManager cm)
+        private MoteurDeJeu()
         {
-            spriteBatch = spr;
-            gameTime = gm;
-            contentManager = cm;
             panelTouches = new List<DispositionTouches>();
             panelPolices = new List<SpriteFont>();
             strPanelPolices = new List<string>();
@@ -43,17 +52,18 @@ namespace TemplateJeu.MoteurJeu
         }
         private void definePolices() //Definit le nom des ressources-polices à charger pour toute l'application
         {
-            strPanelPolices.Add("nomDeMaFont");
-
+            strPanelPolices.Add(CheminRessourcesFont+"nomDeMaFont");
         }
         private void defineTextures() // Definit le nom des ressources-textures à charger pour toute l'application
         {
-            strPanelTextures.Add("maTexture");
+            strPanelTextures.Add(CheminRessourcesTextures+"maTexture");
         }
 
         //Méthodes MonoGame
-        public void LoadContent()
+        public void LoadContent(SpriteBatch spr, ContentManager cm)
         {
+            spriteBatch = spr;
+            contentManager = cm;
             foreach (string pol in strPanelPolices)
             {
                 panelPolices.Add(contentManager.Load<SpriteFont>(pol));
