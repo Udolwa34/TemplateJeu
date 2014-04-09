@@ -39,6 +39,7 @@
     <Compile Include="Curseur.cs" />
     <Compile Include="Ecran.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="MoteurJeu\DispositionTouches.cs" />
     <Compile Include="MoteurJeu\MoteurDeJeu.cs" />
     <Compile Include="MoteurJeu\PileEcran.cs" />
