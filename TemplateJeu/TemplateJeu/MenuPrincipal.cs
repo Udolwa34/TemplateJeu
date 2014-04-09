@@ -20,11 +20,12 @@ namespace TemplateJeu
 
         public override void fillBnBox()
         {
-            //bnBox.Add(new Bouton());
+            bnBox.Add(new Bouton("firstOne", new Rectangle(100, 100, 50, 25), "commencer"));
+            bnBox.Add(new Bouton("Scond", new Rectangle(100, 150, 50, 25), "option"));
         }
         public override void fillListCurseurs()
         {
-
+            listCurseurs.Add(new Curseur("pointeur", new Rectangle(65, 100, 25, 25)));
         }
         public override void Update()
         {
