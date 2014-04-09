@@ -25,8 +25,8 @@ namespace TemplateJeu.MoteurJeu
         public List<DispositionTouches> panelTouches;
         public List<SpriteFont> panelPolices; private List<string> strPanelPolices;
         public List<Texture2D> panelTextures; private List<string> strPanelTextures;
-        string CheminRessourcesFont = "Polices/";
-        string CheminRessourcesTextures = "Textures/";
+        public string CheminRessourcesFont = "Polices/";
+        public string CheminRessourcesTextures = "Textures/";
 
         //Constructeur
         private MoteurDeJeu()

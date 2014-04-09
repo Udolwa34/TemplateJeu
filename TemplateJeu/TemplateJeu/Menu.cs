@@ -17,7 +17,7 @@ namespace TemplateJeu
         protected List<Bouton> bnBox;
         protected List<Curseur> listCurseurs;
 
-        public Menu(string nom, Rectangle position, Texture2D design)
+        public Menu(string nom, Rectangle position, string design)
             : base(nom,position,design)
         {
 

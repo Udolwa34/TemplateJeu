@@ -30,8 +30,8 @@ namespace TemplateJeu
         {
             base.Initialize();
             screenManager = new PileEcran();
-            //MenuPrincipal menuPrincipal = new MenuPrincipal();
-            //screenManager.add(menuPrincipal as Ecran);
+            MenuPrincipal menuPrincipal = new MenuPrincipal("Menu",new Rectangle(0,0,Window.ClientBounds.Width,Window.ClientBounds.Height),"Menu");
+            screenManager.empiler(menuPrincipal as Ecran);
         }
 
     
