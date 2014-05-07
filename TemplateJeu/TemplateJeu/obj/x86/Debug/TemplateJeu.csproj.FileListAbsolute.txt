@@ -52,3 +52,7 @@ C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows
 C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\leCurseur.png
 C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menu.jpg
 C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\option.jpg
+C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\commencer.jpg
+C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\leCurseur.png
+C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menu.jpg
+C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\option.jpg

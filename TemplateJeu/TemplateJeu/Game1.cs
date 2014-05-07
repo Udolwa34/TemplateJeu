@@ -28,10 +28,16 @@ namespace TemplateJeu
         protected override void Initialize()
         {
             base.Initialize();
+<<<<<<< HEAD
             MoteurDeJeu.InstanceMDJ.widthFenetre = Window.ClientBounds.Width;
             MoteurDeJeu.InstanceMDJ.heightFenetre = Window.ClientBounds.Height;
             EcranPassif preMenuPrincipal = new EcranPresentationStudio("LogoStudio", new Rectangle(0, 0, MoteurDeJeu.InstanceMDJ.widthFenetre, MoteurDeJeu.InstanceMDJ.heightFenetre), "Menu");
             MoteurDeJeu.InstanceMDJ.screenManager.empiler(preMenuPrincipal as Ecran);
+=======
+            screenManager = new PileEcran();
+            MenuSimple menuPrincipal = new MenuSimple("Menu",new Rectangle(0,0,Window.ClientBounds.Width,Window.ClientBounds.Height),"Menu");
+            screenManager.empiler(menuPrincipal as Ecran);
+>>>>>>> 32cb4d01dc5b3c2370886f271c9021c561bca881
         }
 
     
