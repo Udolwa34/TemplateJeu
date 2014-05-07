@@ -38,8 +38,10 @@
     <Compile Include="Bouton.cs" />
     <Compile Include="Curseur.cs" />
     <Compile Include="Ecran.cs" />
+    <Compile Include="EcranPresentationStudio.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="EcranPassif.cs" />
     <Compile Include="MenuPrincipal.cs" />
     <Compile Include="MoteurJeu\DispositionTouches.cs" />
     <Compile Include="MoteurJeu\MoteurDeJeu.cs" />
