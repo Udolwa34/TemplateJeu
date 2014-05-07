@@ -18,6 +18,8 @@ namespace TemplateJeu
         public MenuSimple(string nom, Rectangle position, string design)
             : base(nom,position,design)
         {
+            fillBnBox();
+            fillListCurseurs();
         }
 
         public override void fillBnBox()

@@ -23,8 +23,6 @@ namespace TemplateJeu
         {
             bnBox = new List<Bouton>();
             listCurseurs = new List<Curseur>();
-            fillBnBox();
-            fillListCurseurs();
         }
 
         abstract public void navigation();
