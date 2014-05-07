@@ -22,6 +22,8 @@ namespace TemplateJeu.MoteurJeu
         
         public SpriteBatch spriteBatch;
         public ContentManager contentManager;
+        public PileEcran screenManager;
+        public int widthFenetre; public int heightFenetre;
         public KeyboardState kbState; public KeyboardState OldKbState;
         public List<DispositionTouches> panelTouches;
         public List<SpriteFont> panelPolices; private List<string> strPanelPolices;
@@ -29,9 +31,10 @@ namespace TemplateJeu.MoteurJeu
         public string CheminRessourcesFont = "Polices/";
         public string CheminRessourcesTextures = "Textures/";
 
-        //Constructeur
+        //////////// Constructeur
         private MoteurDeJeu()
         {
+            screenManager = new PileEcran();
             panelTouches = new List<DispositionTouches>();
             panelPolices = new List<SpriteFont>();
             strPanelPolices = new List<string>();
@@ -42,8 +45,8 @@ namespace TemplateJeu.MoteurJeu
             defineTextures();
         }
 
-        //Méthodes persos
 
+        //////////// Méthodes dédiées
         private void defineDispositionTouches() // Définit les touches à utiliser pour chacun des joueurs.
         {
             panelTouches.Add(new DispositionTouches(Keys.Up, Keys.Down,Keys.Left,Keys.Right,
@@ -62,7 +65,8 @@ namespace TemplateJeu.MoteurJeu
             strPanelTextures.Add(CheminRessourcesTextures+"leCurseur");
         }
 
-        //Méthodes MonoGame
+
+        //////////// Méthodes XNA
         public void LoadContent(SpriteBatch spr, ContentManager cm)
         {
             spriteBatch = spr;
@@ -89,12 +93,5 @@ namespace TemplateJeu.MoteurJeu
         {
         }
 
-        /*
-        public void Update()
-        {
-        }
-        public void Draw()
-        {
-        }*/
     }
 }
