@@ -50,8 +50,9 @@ namespace TemplateJeu
         {
             //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             //   Exit();
-
+            MoteurDeJeu.InstanceMDJ.kbState = Keyboard.GetState();           
             screenManager.getLast().Update();
+            MoteurDeJeu.InstanceMDJ.OldKbState = MoteurDeJeu.InstanceMDJ.kbState;
 
             base.Update(gameTime);
         }

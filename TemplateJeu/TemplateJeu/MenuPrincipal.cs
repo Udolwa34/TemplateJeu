@@ -14,6 +14,7 @@ namespace TemplateJeu
 {
     class MenuPrincipal : Menu
     {
+
         public MenuPrincipal(string nom, Rectangle position, string design)
             : base(nom,position,design)
         {
@@ -26,20 +27,66 @@ namespace TemplateJeu
         }
         public override void fillListCurseurs()
         {
-            listCurseurs.Add(new Curseur(MoteurDeJeu.InstanceMDJ.panelTextures[0],bnBox[0].defPositionCurseurFleche(-30,0,20,20 )));
+            int indice = 0;
+            listCurseurs.Add(new Curseur(MoteurDeJeu.InstanceMDJ.panelTextures[0], bnBox[indice].defPositionCurseurFleche(-30, 0, 20, 20), indice));
         }
         override public void Update()
         {
             base.Update();
+            navigation();
         }
         override public void Draw()
         {
             base.Draw();
         }
 
-        public override void navigation(KeyboardState kbs)
-        { 
-            
+        public override void navigation()
+        {
+            // Navigation vers le haut en appuyant à gauche ou en haut
+            if ( ( MoteurDeJeu.InstanceMDJ.kbState.IsKeyDown(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheHaut) 
+                && MoteurDeJeu.InstanceMDJ.OldKbState.IsKeyUp(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheHaut))
+                ||
+                (MoteurDeJeu.InstanceMDJ.kbState.IsKeyDown(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheGauche) 
+                && MoteurDeJeu.InstanceMDJ.OldKbState.IsKeyUp(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheGauche))
+               )
+            {
+                if (listCurseurs[0].getIndice() > 0)
+                {
+                    listCurseurs[0].setIndice(listCurseurs[0].getIndice() - 1);
+                }
+                else
+                {
+                    listCurseurs[0].setIndice(bnBox.Count - 1);
+                }
+                listCurseurs[0].setPosition(bnBox[listCurseurs[0].getIndice()].defPositionCurseurFleche(-30, 0, 20, 20));
+            }
+
+            // Navigation vers le haut en droite ou en bas
+            else if ((MoteurDeJeu.InstanceMDJ.kbState.IsKeyDown(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheBas)
+                && MoteurDeJeu.InstanceMDJ.OldKbState.IsKeyUp(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheBas))
+                ||
+                (MoteurDeJeu.InstanceMDJ.kbState.IsKeyDown(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheDroite)
+                && MoteurDeJeu.InstanceMDJ.OldKbState.IsKeyUp(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheDroite))
+               )
+            {
+                if (listCurseurs[0].getIndice() < bnBox.Count - 1)
+                {
+                    listCurseurs[0].setIndice(listCurseurs[0].getIndice() + 1);
+                }
+                else
+                {
+                    listCurseurs[0].setIndice(0);
+                }
+                listCurseurs[0].setPosition(bnBox[listCurseurs[0].getIndice()].defPositionCurseurFleche(-30, 0, 20, 20));
+
+            }
+
+            if ( ( MoteurDeJeu.InstanceMDJ.kbState.IsKeyDown(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheOK) 
+                && MoteurDeJeu.InstanceMDJ.OldKbState.IsKeyUp(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheOK)))
+            {
+                bnBox[listCurseurs[0].getIndice()].onClick();
+            }
+
         }
 
     }
