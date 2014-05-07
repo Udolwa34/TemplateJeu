@@ -72,13 +72,8 @@ namespace TemplateJeu
 
         public override void fillListCurseurs()
         {
-<<<<<<< HEAD
-            int indice = 11;
-            listCurseurs.Add(new Curseur(MoteurDeJeu.InstanceMDJ.panelTextures[0], bnBox[indice].defPositionCurseurFleche(-30, 0, 20, 20), indice));
-=======
-            int indice = 0;
-            listCurseurs.Add(new Curseur(MoteurDeJeu.InstanceMDJ.panelTextures[0], new Rectangle(bnBox[indice].getPosition().X, bnBox[indice].getPosition().Y, 80, 64), indice, -40, 0));
->>>>>>> ee2852eab1fa0f62e9713d2a332f2d031e55547e
+            int indice = 12;
+            listCurseurs.Add(new Curseur(MoteurDeJeu.InstanceMDJ.panelTextures[0], new Rectangle(bnBox[indice].getPosition().X, bnBox[indice].getPosition().Y, 30, 30), indice, -40, 0));
         }
 
         override public void Update()
@@ -120,39 +115,33 @@ namespace TemplateJeu
             position[1] = indexLigne;
             return position;
         }*/
+
          private int[] DetectPositionInMatrix()
          {
              int[] position = new int[2];
              int indexLigne = 0, indexColonne = 0;
-             int compteur = -1;
+             int compteur = 0;
              do
              {
-                 if (indexLigne == 5)
-                     position[0] = 6;
-                 if (dispositionBn[indexColonne, indexLigne] != 1)
-                 {
-                     indexColonne++;
-                     indexLigne = 0;
-                 }
-                 else
+                 if (dispositionBn[indexColonne, indexLigne] == 1)
                  {
                      compteur++;
-                     if (indexLigne >= nbrLigne - 1)
-                     {
-                         indexColonne++;
-                         indexLigne = 0;
-                     }
-                     else
-                     {
-                         indexLigne++;
-                     }
+                     if (compteur < listCurseurs[0].getIndice()+1)
+                        indexLigne++;
+                 }
+                 if (indexLigne >= nbrLigne - 1 || dispositionBn[indexColonne, indexLigne] == 0)
+                 {
+                     //if (dispositionBn[indexColonne, indexLigne] != 0)
+                     indexColonne++;
+                     indexLigne = 0;
                  }
              } while (compteur < listCurseurs[0].getIndice()) ;
              position[0] = indexColonne;
              position[1] = indexLigne;
              return position;
          }
-        private int getLastBnOfAColumn(int colonne)
+
+        private int getLastIdListOfAColumn(int colonne)
         {
             int compteur = 0;
             int indexLigne = 0, indexColonne = 0;
@@ -161,7 +150,8 @@ namespace TemplateJeu
                 if (dispositionBn[indexColonne, indexLigne] == 1 && indexLigne<nbrLigne)
                 {
                     indexLigne++;
-                    compteur++;
+                    if (compteur < listCurseurs[0].getIndice() + 1)
+                        compteur++;
                 }
                 else
                 {
@@ -177,6 +167,53 @@ namespace TemplateJeu
             return compteur-1;
         }
 
+        private int getTheLastBnOfAColumn(int colonne)
+        {
+            int compteur = 0;
+            int indexLigne = 0, indexColonne = 0;
+            while (indexColonne < colonne)
+            {
+                if (dispositionBn[indexColonne, indexLigne] == 1 && indexLigne < nbrLigne)
+                {
+                    indexLigne++;
+                    if (compteur < listCurseurs[0].getIndice() + 1)
+                        compteur++;
+                }
+                else
+                {
+                    indexColonne++;
+                    indexLigne = 0;
+                }
+            }
+            while (indexLigne < nbrLigne && dispositionBn[colonne, indexLigne] == 1)
+            {
+                indexLigne++;
+                compteur++;
+            }
+            return indexLigne-1;
+        }
+
+        private int getTheIdListOfTheFirstOfAColomn(int colonne)
+        {
+            int compteur = 0;
+            int indexLigne = 0, indexColonne = 0;
+            while (indexColonne < colonne)
+            {
+                if (dispositionBn[indexColonne, indexLigne] == 1 && indexLigne < nbrLigne)
+                {
+                    indexLigne++;
+                    if (compteur < listCurseurs[0].getIndice() + 1)
+                        compteur++;
+                }
+                else
+                {
+                    indexColonne++;
+                    indexLigne = 0;
+                }
+            }
+            return compteur;
+        }
+
         public override void navigation()
         {
             // Navigation vers le haut en appuyant en haut
@@ -190,28 +227,29 @@ namespace TemplateJeu
                 }
                 else
                 {
-                    listCurseurs[0].setIndice(getLastBnOfAColumn(position[0]));
+                    listCurseurs[0].setIndice(getLastIdListOfAColumn(position[0]));
                 }
                 listCurseurs[0].setPosition(bnBox[listCurseurs[0].getIndice()].getPosition().X + listCurseurs[0].getDecalageX(),
                                             bnBox[listCurseurs[0].getIndice()].getPosition().Y + listCurseurs[0].getDecalageY());
             }
-        /*
+        
             // Navigation vers le bas en appuyant en bas
             else if (MoteurDeJeu.InstanceMDJ.kbState.IsKeyDown(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheBas)
                 && MoteurDeJeu.InstanceMDJ.OldKbState.IsKeyUp(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheBas))
             {
-                if (listCurseurs[0].getIndice() < bnBox.Count - 1)
+                int[] position = DetectPositionInMatrix();
+                if (position[1] < getTheLastBnOfAColumn(position[0]))
                 {
                     listCurseurs[0].setIndice(listCurseurs[0].getIndice() + 1);
                 }
                 else
                 {
-                    listCurseurs[0].setIndice(0);
+                    listCurseurs[0].setIndice(getTheIdListOfTheFirstOfAColomn(position[0]));
                 }
-                listCurseurs[0].setPosition(bnBox[listCurseurs[0].getIndice()].defPositionCurseurFleche(-30, 0, 20, 20));
-
+                listCurseurs[0].setPosition(bnBox[listCurseurs[0].getIndice()].getPosition().X + listCurseurs[0].getDecalageX(),
+                                            bnBox[listCurseurs[0].getIndice()].getPosition().Y + listCurseurs[0].getDecalageY());
             }
-
+            /*
             if (MoteurDeJeu.InstanceMDJ.kbState.IsKeyDown(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheGauche)
                 && MoteurDeJeu.InstanceMDJ.OldKbState.IsKeyUp(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheGauche))
             {
