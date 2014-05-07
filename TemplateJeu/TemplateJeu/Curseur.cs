@@ -11,17 +11,21 @@ namespace TemplateJeu
     {
         private Texture2D design;
         private Rectangle position;
+        private int indiceElement;
 
-        public Curseur(Texture2D _design, Rectangle _position)
+        public Curseur(Texture2D _design, Rectangle _position, int indice = 0)
         {
             design = _design;
             position = _position;
+            indiceElement = indice;
         }
 
-        public Curseur(string _design, Rectangle _position)
+        public Curseur(string _design, Rectangle _position, int indice = 0)
         {
             position = _position;
             LoadContent(_design);
+            indiceElement = indice;
+
         }
         public Texture2D getDesign()
         {
@@ -34,6 +38,15 @@ namespace TemplateJeu
         public void setPosition(Rectangle newPosition)
         {
             position = newPosition;
+        }
+
+        public int getIndice()
+        {
+            return this.indiceElement;
+        }
+        public void setIndice(int newIndice)
+        {
+            indiceElement = newIndice;
         }
 
         public void LoadContent(string nomCur)

@@ -27,7 +27,7 @@ namespace TemplateJeu
             fillListCurseurs();
         }
 
-        abstract public void navigation(KeyboardState kbs);
+        abstract public void navigation();
 
         abstract public void fillBnBox();
         abstract public void fillListCurseurs();

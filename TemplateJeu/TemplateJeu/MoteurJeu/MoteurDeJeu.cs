@@ -22,6 +22,7 @@ namespace TemplateJeu.MoteurJeu
         
         public SpriteBatch spriteBatch;
         public ContentManager contentManager;
+        public KeyboardState kbState; public KeyboardState OldKbState;
         public List<DispositionTouches> panelTouches;
         public List<SpriteFont> panelPolices; private List<string> strPanelPolices;
         public List<Texture2D> panelTextures; private List<string> strPanelTextures;
@@ -46,9 +47,11 @@ namespace TemplateJeu.MoteurJeu
         private void defineDispositionTouches() // Définit les touches à utiliser pour chacun des joueurs.
         {
             panelTouches.Add(new DispositionTouches(Keys.Up, Keys.Down,Keys.Left,Keys.Right,
-                                                    Keys.A,Keys.Z,Keys.E,Keys.Q,Keys.S,Keys.D));
+                                                    Keys.A,Keys.Z,Keys.E,Keys.Q,Keys.S,Keys.D,
+                                                    Keys.Enter,Keys.Escape));
             panelTouches.Add(new DispositionTouches(Keys.D5, Keys.D2, Keys.D1, Keys.D3,
-                                                    Keys.NumLock, Keys.Divide, Keys.Multiply, Keys.D7, Keys.D8, Keys.D9));
+                                                    Keys.NumLock, Keys.Divide, Keys.Multiply, Keys.D7, Keys.D8, Keys.D9,
+                                                    Keys.PageUp, Keys.PageDown));
         }
         private void definePolices() //Definit le nom des ressources-polices à charger pour toute l'application
         {
