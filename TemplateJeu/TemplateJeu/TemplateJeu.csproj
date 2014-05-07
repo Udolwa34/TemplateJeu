@@ -41,6 +41,8 @@
     <Compile Include="EcranPresentationStudio.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="MenuDouble.cs" />
+    <Compile Include="MenuSimple.cs" />
     <Compile Include="EcranPassif.cs" />
     <Compile Include="MenuSimple.cs" />
     <Compile Include="MoteurJeu\DispositionTouches.cs" />
