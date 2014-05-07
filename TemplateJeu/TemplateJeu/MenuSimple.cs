@@ -12,26 +12,14 @@ using TemplateJeu.MoteurJeu;
 
 namespace TemplateJeu
 {
-    class MenuSimple : Menu
+    abstract class MenuSimple : Menu
     {
 
         public MenuSimple(string nom, Rectangle position, string design)
             : base(nom,position,design)
         {
-            fillBnBox();
-            fillListCurseurs();
         }
 
-        public override void fillBnBox()
-        {
-            bnBox.Add(new Bouton("commencer", new Rectangle(100, 100, 50, 25), "commencer"));
-            bnBox.Add(new Bouton("option", new Rectangle(100, 150, 50, 25), "option"));
-        }
-        public override void fillListCurseurs()
-        {
-            int indice = 0;
-            listCurseurs.Add(new Curseur(MoteurDeJeu.InstanceMDJ.panelTextures[0], bnBox[indice].defPositionCurseurFleche(-30, 0, 20, 20), indice));
-        }
         override public void Update()
         {
             base.Update();
