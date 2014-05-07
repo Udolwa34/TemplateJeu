@@ -40,7 +40,7 @@ namespace TemplateJeu
                 else if (getNom() == "LogoMono")
                 {
                     //Passe au menu principal et dépile cet écran de la liste.
-                    MenuSimple menuPrincipal = new MenuSimple("Menu", new Rectangle(0, 0, MoteurDeJeu.InstanceMDJ.widthFenetre, MoteurDeJeu.InstanceMDJ.heightFenetre), "Menus/MenuPrincipal/MenuPrincipal");
+                    MenuPrincipal menuPrincipal = new MenuPrincipal("Menu", new Rectangle(0, 0, MoteurDeJeu.InstanceMDJ.widthFenetre, MoteurDeJeu.InstanceMDJ.heightFenetre), "Menus/MenuPrincipal/MenuPrincipal");
                     MoteurDeJeu.InstanceMDJ.screenManager.depiler();
                     MoteurDeJeu.InstanceMDJ.screenManager.empiler(menuPrincipal as Ecran);
                 }

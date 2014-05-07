@@ -34,24 +34,7 @@ namespace TemplateJeu
             position = newPosition;
         }
 
-        public Rectangle defPositionCurseurEncadre(int x, int y)
-        {
-            Rectangle leRect = getPosition();
-            leRect.X += x;
-            leRect.Y += y;
-            return leRect;
-        }
-        public Rectangle defPositionCurseurFleche(int x, int y, int Width, int Height )
-        {
-            Rectangle leRect = getPosition();
-            leRect.X += x;
-            leRect.Y += y;
-            leRect.Width = Width;
-            leRect.Height = Height;
-            return leRect;
-        }
-
-        
+    
         public void LoadContent(string nomBn)
         {
             design = MoteurDeJeu.InstanceMDJ.contentManager.Load<Texture2D>(MoteurDeJeu.InstanceMDJ.CheminRessourcesTextures + nomBn);
