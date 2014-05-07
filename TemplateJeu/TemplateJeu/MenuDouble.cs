@@ -34,12 +34,18 @@ namespace TemplateJeu
         public override void fillBnBox()
         {
             createBn("commencer", new Rectangle(100, 100, 50, 25), "commencer",0);
-            //createBn("option", new Rectangle(100, 150, 50, 25), "option", 0);
-            //createBn("commencer", new Rectangle(100, 200, 50, 25), "commencer", 0);
-            //createBn("option", new Rectangle(100, 250, 50, 25), "option", 0);
+            createBn("option", new Rectangle(100, 150, 50, 25), "option", 0);
+            createBn("commencer", new Rectangle(100, 200, 50, 25), "commencer", 0);
+            createBn("option", new Rectangle(100, 250, 50, 25), "option", 0);
             createBn("option", new Rectangle(300, 150, 50, 25), "option", 1);
             createBn("commencer", new Rectangle(300, 200, 50, 25), "commencer", 1);
             createBn("option", new Rectangle(300, 250, 50, 25), "option", 1);
+            createBn("option", new Rectangle(300, 300, 50, 25), "option", 1);
+            createBn("commencer", new Rectangle(300, 400, 50, 25), "commencer", 1);
+            createBn("option", new Rectangle(400, 250, 50, 25), "option", 2);
+            createBn("option", new Rectangle(400, 300, 50, 25), "option", 2);
+            createBn("commencer", new Rectangle(400, 400, 50, 25), "commencer",2);
+            createBn("option", new Rectangle(400, 450, 50, 25), "option", 2);
         }
 
         private void createBn(string _design, Rectangle _position, string _nom, int indexColonne)
@@ -66,7 +72,7 @@ namespace TemplateJeu
 
         public override void fillListCurseurs()
         {
-            int indice = 0;
+            int indice = 11;
             listCurseurs.Add(new Curseur(MoteurDeJeu.InstanceMDJ.panelTextures[0], bnBox[indice].defPositionCurseurFleche(-30, 0, 20, 20), indice));
         }
 
@@ -79,30 +85,85 @@ namespace TemplateJeu
         {
             base.Draw();
         }
-
-        private int[] DetectPositionInMatrix()
+        
+        /*private int[] DetectPositionInMatrix()
         {
             int[] position = new int[2];
             int indexLigne=0, indexColonne=0;
-            for (int i = 0; i<listCurseurs[0].getIndice(); i++)
+            for (int i = 0; i<listCurseurs[0].getIndice()+1; i++)
             {
-                if (dispositionBn[indexColonne, indexLigne] == 1)
+                if (dispositionBn[indexColonne, indexLigne] != 1)
+                {
+                    indexColonne++;
+                    indexLigne = 0;
+                    i--;
+                }
+                else
+                {
+                    if (indexLigne >= nbrLigne - 1)
+                    {
+                        indexColonne++;
+                        indexLigne = 0;
+                    }
+                    else
+                    {
+                        indexLigne++;
+                    }
+                }
+            }
+            position[0] = indexColonne;
+            position[1] = indexLigne;
+            return position;
+        }*/
+         private int[] DetectPositionInMatrix()
+         {
+             int[] position = new int[2];
+             int indexLigne = 0, indexColonne = 0;
+             int compteur = -1;
+             do
+             {
+                 if (indexLigne == 5)
+                     position[0] = 6;
+                 if (dispositionBn[indexColonne, indexLigne] != 1)
+                 {
+                     indexColonne++;
+                     indexLigne = 0;
+                 }
+                 else
+                 {
+                     compteur++;
+                     if (indexLigne >= nbrLigne - 1)
+                     {
+                         indexColonne++;
+                         indexLigne = 0;
+                     }
+                     else
+                     {
+                         indexLigne++;
+                     }
+                 }
+             } while (compteur < listCurseurs[0].getIndice()) ;
+             position[0] = indexColonne;
+             position[1] = indexLigne;
+             return position;
+         }
+        private int getLastBnOfAColumn(int colonne)
+        {
+            int compteur = 0;
+            int indexLigne = 0, indexColonne = 0;
+            while ( indexColonne < colonne )
+            {
+                if (dispositionBn[indexColonne, indexLigne] == 1 && indexLigne<nbrLigne)
+                {
                     indexLigne++;
+                    compteur++;
+                }
                 else
                 {
                     indexColonne++;
                     indexLigne = 0;
                 }
             }
-            position[0] = indexColonne;
-            position[1] = indexLigne;
-            return position;
-        }
-
-        private int getLastBnOfAColumn(int colonne)
-        {
-            int compteur = 0;
-            int indexLigne = 0;
             while (indexLigne < nbrLigne && dispositionBn[colonne, indexLigne] == 1)
             {
                     indexLigne++;
