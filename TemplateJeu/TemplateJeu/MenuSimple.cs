@@ -12,10 +12,10 @@ using TemplateJeu.MoteurJeu;
 
 namespace TemplateJeu
 {
-    class MenuPrincipal : Menu
+    class MenuSimple : Menu
     {
 
-        public MenuPrincipal(string nom, Rectangle position, string design)
+        public MenuSimple(string nom, Rectangle position, string design)
             : base(nom,position,design)
         {
         }
