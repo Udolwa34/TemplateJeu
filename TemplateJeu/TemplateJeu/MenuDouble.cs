@@ -72,8 +72,13 @@ namespace TemplateJeu
 
         public override void fillListCurseurs()
         {
+<<<<<<< HEAD
             int indice = 11;
             listCurseurs.Add(new Curseur(MoteurDeJeu.InstanceMDJ.panelTextures[0], bnBox[indice].defPositionCurseurFleche(-30, 0, 20, 20), indice));
+=======
+            int indice = 0;
+            listCurseurs.Add(new Curseur(MoteurDeJeu.InstanceMDJ.panelTextures[0], new Rectangle(bnBox[indice].getPosition().X, bnBox[indice].getPosition().Y, 80, 64), indice, -40, 0));
+>>>>>>> ee2852eab1fa0f62e9713d2a332f2d031e55547e
         }
 
         override public void Update()
@@ -187,7 +192,8 @@ namespace TemplateJeu
                 {
                     listCurseurs[0].setIndice(getLastBnOfAColumn(position[0]));
                 }
-                listCurseurs[0].setPosition(bnBox[listCurseurs[0].getIndice()].defPositionCurseurFleche(-30, 0, 20, 20));
+                listCurseurs[0].setPosition(bnBox[listCurseurs[0].getIndice()].getPosition().X + listCurseurs[0].getDecalageX(),
+                                            bnBox[listCurseurs[0].getIndice()].getPosition().Y + listCurseurs[0].getDecalageY());
             }
         /*
             // Navigation vers le bas en appuyant en bas

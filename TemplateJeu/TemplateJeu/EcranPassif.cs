@@ -27,11 +27,11 @@ namespace TemplateJeu
 
 
         //////////// Constructeur
-        public EcranPassif(string nom, Rectangle position, string design, double valChangement = 40)
+        public EcranPassif(string nom, Rectangle position, string design, double valChangement = 20)
             : base(nom,position,design)
         {
             timer = 0;
-            if (valChangement < 40) { valChangement = 40; }
+            if (valChangement < 20) { valChangement = 20; }
             valeurChangementEcran = valChangement;
         }
 

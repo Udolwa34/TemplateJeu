@@ -22,13 +22,16 @@ namespace TemplateJeu
         }
         public override void fillBnBox()
         {
-            bnBox.Add(new Bouton("commencer", new Rectangle(100, 100, 50, 25), "commencer"));
-            bnBox.Add(new Bouton("option", new Rectangle(100, 150, 50, 25), "option"));
+            bnBox.Add(new Bouton("Menus/MenuPrincipal/BTN_Jouer", new Rectangle(260, 200, 308, 64), "MP_Jouer"));
+            bnBox.Add(new Bouton("Menus/MenuPrincipal/BTN_Options", new Rectangle(260, 280, 308, 64), "MP_Options"));
+            bnBox.Add(new Bouton("Menus/MenuPrincipal/BTN_Quitter", new Rectangle(260, 360, 308, 64), "MP_Quitter"));
         }
         public override void fillListCurseurs()
         {
             int indice = 0;
-            listCurseurs.Add(new Curseur(MoteurDeJeu.InstanceMDJ.panelTextures[0], bnBox[indice].defPositionCurseurFleche(-30, 0, 20, 20), indice));
+            listCurseurs.Add(new Curseur(MoteurDeJeu.InstanceMDJ.panelTextures[0], 
+                                    new Rectangle(bnBox[indice].getPosition().X, bnBox[indice].getPosition().Y, 80,64),
+                                    indice, -90, -10));
         }
     }
 }

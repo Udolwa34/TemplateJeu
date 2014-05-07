@@ -62,7 +62,7 @@ namespace TemplateJeu.MoteurJeu
         }
         private void defineTextures() // Definit le nom des ressources-textures à charger pour toute l'application
         {
-            strPanelTextures.Add(CheminRessourcesTextures+"leCurseur");
+            strPanelTextures.Add(CheminRessourcesTextures+"Menus/CUR_curseur");
         }
 
 

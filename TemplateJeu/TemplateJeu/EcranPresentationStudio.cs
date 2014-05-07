@@ -15,7 +15,7 @@ namespace TemplateJeu
     class EcranPresentationStudio : EcranPassif
     {
         //////////// Constructeur
-        public EcranPresentationStudio(string nom, Rectangle position, string design, double valChangement = 40)
+        public EcranPresentationStudio(string nom, Rectangle position, string design, double valChangement = 20)
             : base(nom,position,design,valChangement)
         {
         }
@@ -30,10 +30,20 @@ namespace TemplateJeu
             if ( base.getTimer() >= base.getValMaxTimer() || (MoteurDeJeu.InstanceMDJ.kbState.IsKeyDown(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheOK)
                 && MoteurDeJeu.InstanceMDJ.OldKbState.IsKeyUp(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheOK)))
             {
-                //Passe au menu principal et dépile cet écran de la liste.
-                MenuPrincipal menuPrincipal = new MenuPrincipal("Menu", new Rectangle(0, 0, MoteurDeJeu.InstanceMDJ.widthFenetre, MoteurDeJeu.InstanceMDJ.heightFenetre), "Menu");
-                MoteurDeJeu.InstanceMDJ.screenManager.depiler();
-                MoteurDeJeu.InstanceMDJ.screenManager.empiler(menuPrincipal as Ecran);
+                if (getNom() == "LogoStudio")
+                {
+                    //Passe au menu principal et dépile cet écran de la liste.
+                    EcranPassif LogoMono = new EcranPresentationStudio("LogoMono", new Rectangle(0, 0, MoteurDeJeu.InstanceMDJ.widthFenetre, MoteurDeJeu.InstanceMDJ.heightFenetre), "Menus/EcranDev2");
+                    MoteurDeJeu.InstanceMDJ.screenManager.depiler();
+                    MoteurDeJeu.InstanceMDJ.screenManager.empiler(LogoMono as Ecran);
+                }
+                else if (getNom() == "LogoMono")
+                {
+                    //Passe au menu principal et dépile cet écran de la liste.
+                    MenuPrincipal menuPrincipal = new MenuPrincipal("Menu", new Rectangle(0, 0, MoteurDeJeu.InstanceMDJ.widthFenetre, MoteurDeJeu.InstanceMDJ.heightFenetre), "Menus/MenuPrincipal/MenuPrincipal");
+                    MoteurDeJeu.InstanceMDJ.screenManager.depiler();
+                    MoteurDeJeu.InstanceMDJ.screenManager.empiler(menuPrincipal as Ecran);
+                }
             }
         }
     }

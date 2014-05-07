@@ -48,7 +48,8 @@ namespace TemplateJeu
                 {
                     listCurseurs[0].setIndice(bnBox.Count - 1);
                 }
-                listCurseurs[0].setPosition(bnBox[listCurseurs[0].getIndice()].defPositionCurseurFleche(-30, 0, 20, 20));
+                listCurseurs[0].setPosition(bnBox[listCurseurs[0].getIndice()].getPosition().X + listCurseurs[0].getDecalageX(),
+                                            bnBox[listCurseurs[0].getIndice()].getPosition().Y + listCurseurs[0].getDecalageY());
             }
 
             // Navigation vers le haut en droite ou en bas
@@ -67,7 +68,8 @@ namespace TemplateJeu
                 {
                     listCurseurs[0].setIndice(0);
                 }
-                listCurseurs[0].setPosition(bnBox[listCurseurs[0].getIndice()].defPositionCurseurFleche(-30, 0, 20, 20));
+                listCurseurs[0].setPosition(bnBox[listCurseurs[0].getIndice()].getPosition().X + listCurseurs[0].getDecalageX(),
+                                            bnBox[listCurseurs[0].getIndice()].getPosition().Y + listCurseurs[0].getDecalageY());
 
             }
 
