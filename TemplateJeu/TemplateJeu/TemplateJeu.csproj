@@ -123,10 +123,11 @@
     </Content>
     <Content Include="Icon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Content\Polices\" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Content\Polices\ArialFont.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="TemplateJeu_CléTemporaire.pfx" />
   </ItemGroup>
   <ItemGroup>

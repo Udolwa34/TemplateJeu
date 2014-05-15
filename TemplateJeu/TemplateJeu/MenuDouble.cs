@@ -18,6 +18,7 @@ namespace TemplateJeu
         int[] matrixData;
         int nbrColonne;
         int nbrLigne;
+        int[] popoposition;
 
         public MenuDouble(string nom, Rectangle position, string design, int _nbrColonne, int _nbrLigne)
             : base(nom,position,design)
@@ -25,12 +26,16 @@ namespace TemplateJeu
             this.nbrColonne = _nbrColonne;
             this.nbrLigne = _nbrLigne;
             matrice = new int[_nbrColonne, _nbrLigne];
-            matrixData = new int[_nbrColonne];
             for (int i = 0; i < nbrColonne; i++)
                 for (int j = 0; j < nbrLigne; j++)
                     matrice[i, j] = 0;
+            matrixData = new int[_nbrColonne];
+            for (int i = 0; i < nbrColonne; i++)
+                matrixData[i] = 0;
             fillBnBox();
             fillListCurseurs();
+
+            popoposition = new int[2];
         }
 
         public override void fillBnBox()
@@ -39,55 +44,56 @@ namespace TemplateJeu
             createBn("option", new Rectangle(50, 150, 50, 25), "option", 0);
             createBn("option", new Rectangle(50, 200, 50, 25), "option", 0);
             createBn("option", new Rectangle(50, 250, 50, 25), "option", 0);
-            matrixData[0] = 4;
+            createBn("option", new Rectangle(50, 300, 50, 25), "option", 0);
+            createBn("option", new Rectangle(50, 350, 50, 25), "option", 0);
+            createBn("option", new Rectangle(50, 400, 50, 25), "option", 0);
+
             createBn("option", new Rectangle(125, 100, 50, 25), "option", 1);
             createBn("option", new Rectangle(125, 150, 50, 25), "option", 1);
             createBn("option", new Rectangle(125, 200, 50, 25), "option", 1);
             createBn("option", new Rectangle(125, 250, 50, 25), "option", 1);
             createBn("option", new Rectangle(125, 300, 50, 25), "option", 1);
             createBn("option", new Rectangle(125, 350, 50, 25), "option", 1);
-            createBn("option", new Rectangle(125, 400, 50, 25), "option", 1);
-            matrixData[1] = 7;
+
             createBn("option", new Rectangle(200, 100, 50, 25), "option", 2);
-            matrixData[2] = 1;
+            createBn("option", new Rectangle(200, 150, 50, 25), "option", 2);
+            createBn("option", new Rectangle(200, 200, 50, 25), "option", 2);
+            createBn("option", new Rectangle(200, 250, 50, 25), "option", 2);
+            createBn("option", new Rectangle(200, 300, 50, 25), "option", 2);
+
             createBn("option", new Rectangle(275, 100, 50, 25), "option", 3);
             createBn("option", new Rectangle(275, 150, 50, 25), "option", 3);
             createBn("option", new Rectangle(275, 200, 50, 25), "option", 3);
             createBn("option", new Rectangle(275, 250, 50, 25), "option", 3);
-            createBn("option", new Rectangle(275, 300, 50, 25), "option", 3);
-            matrixData[3] = 5;
+
             createBn("option", new Rectangle(350, 100, 50, 25), "option", 4);
             createBn("option", new Rectangle(350, 150, 50, 25), "option", 4);
             createBn("option", new Rectangle(350, 200, 50, 25), "option", 4);
-            matrixData[4] = 3;
+
             createBn("option", new Rectangle(425, 100, 50, 25), "option", 5);
             createBn("option", new Rectangle(425, 150, 50, 25), "option", 5);
-            createBn("option", new Rectangle(425, 200, 50, 25), "option", 5);
-            createBn("option", new Rectangle(425, 250, 50, 25), "option", 5);
-            createBn("option", new Rectangle(425, 300, 50, 25), "option", 5);
-            createBn("option", new Rectangle(425, 350, 50, 25), "option", 5);
-            createBn("option", new Rectangle(425, 400, 50, 25), "option", 5);
-            matrixData[5] = 7;
+
             createBn("option", new Rectangle(500, 100, 50, 25), "option", 6);
-            matrixData[6] = 1;
+            createBn("option", new Rectangle(500, 150, 50, 25), "option", 6);
+            createBn("option", new Rectangle(500, 200, 50, 25), "option", 6);
+
             createBn("option", new Rectangle(575, 100, 50, 25), "option", 7);
             createBn("option", new Rectangle(575, 150, 50, 25), "option", 7);
             createBn("option", new Rectangle(575, 200, 50, 25), "option", 7);
             createBn("option", new Rectangle(575, 250, 50, 25), "option", 7);
-            createBn("option", new Rectangle(575, 300, 50, 25), "option", 7);
-            matrixData[7] = 5;
+
             createBn("option", new Rectangle(650, 100, 50, 25), "option", 8);
             createBn("option", new Rectangle(650, 150, 50, 25), "option", 8);
             createBn("option", new Rectangle(650, 200, 50, 25), "option", 8);
-            matrixData[8] = 3;
+            createBn("option", new Rectangle(650, 250, 50, 25), "option", 8);
+            createBn("option", new Rectangle(650, 300, 50, 25), "option", 8);
+
             createBn("option", new Rectangle(725, 100, 50, 25), "option", 9);
             createBn("option", new Rectangle(725, 150, 50, 25), "option", 9);
             createBn("option", new Rectangle(725, 200, 50, 25), "option", 9);
             createBn("option", new Rectangle(725, 250, 50, 25), "option", 9);
             createBn("option", new Rectangle(725, 300, 50, 25), "option", 9);
             createBn("option", new Rectangle(725, 350, 50, 25), "option", 9);
-            createBn("option", new Rectangle(725, 400, 50, 25), "option", 9);
-            matrixData[9] = 7;
         }
 
         private void createBn(string _design, Rectangle _position, string _nom, int indexColonne)
@@ -106,6 +112,7 @@ namespace TemplateJeu
             if (i < nbrLigne)
             {
                 matrice[indexColonne, i] = 1;
+                matrixData[indexColonne]++;
                 return 1;
             }
             else
@@ -123,9 +130,26 @@ namespace TemplateJeu
             base.Update();
             navigation();
         }
+
         override public void Draw()
         {
             base.Draw();
+            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[0], new Vector2(75, 50), Color.White);
+            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[1], new Vector2(150, 50), Color.White);
+            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[2], new Vector2(225, 50), Color.White);
+            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[3], new Vector2(300, 50), Color.White);
+            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[4], new Vector2(375, 50), Color.White);
+            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[5], new Vector2(450, 50), Color.White);
+            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[6], new Vector2(525, 50), Color.White);
+            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[7], new Vector2(600, 50), Color.White);
+            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[8], new Vector2(675, 50), Color.White);
+            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[9], new Vector2(750, 50), Color.White);
+
+            for (int i = 0; i < nbrColonne; i++)
+                for (int j = 0; j < nbrLigne; j++)
+                    MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrice[i, j], new Vector2(275 + i * 15, 275 + j * 15), Color.White);
+            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], popoposition[0] + "   " + popoposition[1], new Vector2(10, 10), Color.White);
+            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + listCurseurs[0].getIndice(), new Vector2(100, 10), Color.White);
         }
       
          private int[] DetectPositionInMatrix()
@@ -136,7 +160,7 @@ namespace TemplateJeu
              int compteur = 0;
              do
              {
-                 if (compteur+matrixData[indexColonne] < indice)
+                 if (compteur+matrixData[indexColonne] <= indice)
                  {
                      compteur += matrixData[indexColonne];
                      indexColonne++;
@@ -155,23 +179,24 @@ namespace TemplateJeu
         private int getLastIdListOfAColumn(int colonne)
         {
             int compteur = 0;
-            int indexColonne = 0;
-            for (int i = 0; i <= colonne; i++)
+            compteur += matrixData[0] - 1;
+            for (int i = 1; i <= colonne; i++)
             {
-                compteur += matrixData[indexColonne];
-            }
-            return compteur-1;
-        }
-               
-        private int getTheIdListOfTheFirstOfAColomn(int colonne)
-        {
-            int compteur = 0;
-            int indexColonne = 0;
-            for (int i = 0; i < colonne; i++)
-            {
-                compteur += matrixData[indexColonne];
+                compteur += matrixData[i];
             }
             return compteur;
+        }
+               
+        private int getFirstIdListOfAColumn(int colonne)
+        {
+            int compteur = 0;
+            if ( colonne > 0)
+                compteur += matrixData[0] - 1;
+            for (int i = 1; i < colonne; i++)
+            {
+                compteur += matrixData[i];
+            }
+            return compteur+1;
         }
         public override void navigation()
         {
@@ -181,6 +206,7 @@ namespace TemplateJeu
                 && MoteurDeJeu.InstanceMDJ.OldKbState.IsKeyUp(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheHaut))
             {
                 int[] position = DetectPositionInMatrix();
+                popoposition = position;
                 if (position[1] > 0) // le curseur n'est pas sur la première ligne de la colonne
                 {
                     listCurseurs[0].setIndice(listCurseurs[0].getIndice() - 1);
@@ -198,13 +224,13 @@ namespace TemplateJeu
                 && MoteurDeJeu.InstanceMDJ.OldKbState.IsKeyUp(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheBas))
             {
                 int[] position = DetectPositionInMatrix();
-                if (position[1] < matrixData[position[0]])
+                if (position[1] < matrixData[position[0]]-1)
                 {
                     listCurseurs[0].setIndice(listCurseurs[0].getIndice() + 1);
                 }
                 else
                 {
-                    listCurseurs[0].setIndice(getTheIdListOfTheFirstOfAColomn(position[0]));
+                    listCurseurs[0].setIndice(getFirstIdListOfAColumn(position[0]));
                 }
                 listCurseurs[0].setPosition(bnBox[listCurseurs[0].getIndice()].getPosition().X + listCurseurs[0].getDecalageX(),
                                             bnBox[listCurseurs[0].getIndice()].getPosition().Y + listCurseurs[0].getDecalageY());
@@ -238,7 +264,10 @@ namespace TemplateJeu
                 int[] position = DetectPositionInMatrix();
                 if (position[0] < nbrColonne-1)// le curseur n'est pas sur la dernière colonne
                 {
-                    listCurseurs[0].setIndice(listCurseurs[0].getIndice() + (matrixData[position[0]] - position[1])+ position[1] );
+                    if (matrixData[position[0] + 1] > position[1])
+                        listCurseurs[0].setIndice(listCurseurs[0].getIndice() + (matrixData[position[0]] - position[1]) + position[1]);
+                    else
+                        listCurseurs[0].setIndice(getLastIdListOfAColumn(position[0] + 1));
                 }
                 else
                 {
@@ -252,6 +281,8 @@ namespace TemplateJeu
             {
                 bnBox[listCurseurs[0].getIndice()].onClick();
             }
+
+            popoposition = DetectPositionInMatrix();
         }
     }
 }

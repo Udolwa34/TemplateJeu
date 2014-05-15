@@ -30,7 +30,7 @@ namespace TemplateJeu.MoteurJeu
         public List<Texture2D> panelTextures; private List<string> strPanelTextures;
         public string CheminRessourcesFont = "Polices/";
         public string CheminRessourcesTextures = "Textures/";
-
+        
         //////////// Constructeur
         private MoteurDeJeu()
         {
@@ -58,7 +58,7 @@ namespace TemplateJeu.MoteurJeu
         }
         private void definePolices() //Definit le nom des ressources-polices à charger pour toute l'application
         {
-            //strPanelPolices.Add(CheminRessourcesFont+"nomDeMaFont");
+            strPanelPolices.Add(CheminRessourcesFont+"ArialFont");
         }
         private void defineTextures() // Definit le nom des ressources-textures à charger pour toute l'application
         {
