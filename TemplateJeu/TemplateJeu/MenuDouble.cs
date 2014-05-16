@@ -92,8 +92,8 @@ namespace TemplateJeu
             createBn("option", new Rectangle(725, 150, 50, 25), "option", 9);
             createBn("option", new Rectangle(725, 200, 50, 25), "option", 9);
             createBn("option", new Rectangle(725, 250, 50, 25), "option", 9);
-            createBn("option", new Rectangle(725, 300, 50, 25), "option", 9);
-            createBn("option", new Rectangle(725, 350, 50, 25), "option", 9);
+           // createBn("option", new Rectangle(725, 300, 50, 25), "option", 9);
+            //createBn("option", new Rectangle(725, 350, 50, 25), "option", 9);
         }
 
         private void createBn(string _design, Rectangle _position, string _nom, int indexColonne)
@@ -134,6 +134,7 @@ namespace TemplateJeu
         override public void Draw()
         {
             base.Draw();
+            /*
             MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[0], new Vector2(75, 50), Color.White);
             MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[1], new Vector2(150, 50), Color.White);
             MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[2], new Vector2(225, 50), Color.White);
@@ -150,7 +151,8 @@ namespace TemplateJeu
                     MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrice[i, j], new Vector2(275 + i * 15, 275 + j * 15), Color.White);
             MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], popoposition[0] + "   " + popoposition[1], new Vector2(10, 10), Color.White);
             MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + listCurseurs[0].getIndice(), new Vector2(100, 10), Color.White);
-        }
+        */        
+         }
       
          private int[] DetectPositionInMatrix()
          {
@@ -190,8 +192,10 @@ namespace TemplateJeu
         private int getFirstIdListOfAColumn(int colonne)
         {
             int compteur = 0;
-            if ( colonne > 0)
+            if (colonne > 0)
                 compteur += matrixData[0] - 1;
+            else
+                return 0;
             for (int i = 1; i < colonne; i++)
             {
                 compteur += matrixData[i];
