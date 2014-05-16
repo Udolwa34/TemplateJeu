@@ -18,7 +18,6 @@ namespace TemplateJeu
         int[] matrixData;
         int nbrColonne;
         int nbrLigne;
-        int[] popoposition;
 
         public MenuDouble(string nom, Rectangle position, string design, int _nbrColonne, int _nbrLigne)
             : base(nom,position,design)
@@ -34,8 +33,6 @@ namespace TemplateJeu
                 matrixData[i] = 0;
             fillBnBox();
             fillListCurseurs();
-
-            popoposition = new int[2];
         }
 
         public override void fillBnBox()
@@ -134,24 +131,6 @@ namespace TemplateJeu
         override public void Draw()
         {
             base.Draw();
-            /*
-            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[0], new Vector2(75, 50), Color.White);
-            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[1], new Vector2(150, 50), Color.White);
-            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[2], new Vector2(225, 50), Color.White);
-            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[3], new Vector2(300, 50), Color.White);
-            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[4], new Vector2(375, 50), Color.White);
-            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[5], new Vector2(450, 50), Color.White);
-            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[6], new Vector2(525, 50), Color.White);
-            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[7], new Vector2(600, 50), Color.White);
-            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[8], new Vector2(675, 50), Color.White);
-            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrixData[9], new Vector2(750, 50), Color.White);
-
-            for (int i = 0; i < nbrColonne; i++)
-                for (int j = 0; j < nbrLigne; j++)
-                    MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + matrice[i, j], new Vector2(275 + i * 15, 275 + j * 15), Color.White);
-            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], popoposition[0] + "   " + popoposition[1], new Vector2(10, 10), Color.White);
-            MoteurDeJeu.InstanceMDJ.spriteBatch.DrawString(MoteurDeJeu.InstanceMDJ.panelPolices[0], " " + listCurseurs[0].getIndice(), new Vector2(100, 10), Color.White);
-        */        
          }
       
          private int[] DetectPositionInMatrix()
@@ -202,15 +181,14 @@ namespace TemplateJeu
             }
             return compteur+1;
         }
+
         public override void navigation()
         {
-            #region navigation verticale
             // Navigation vers le haut en appuyant en haut
             if (MoteurDeJeu.InstanceMDJ.kbState.IsKeyDown(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheHaut)
                 && MoteurDeJeu.InstanceMDJ.OldKbState.IsKeyUp(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheHaut))
             {
                 int[] position = DetectPositionInMatrix();
-                popoposition = position;
                 if (position[1] > 0) // le curseur n'est pas sur la première ligne de la colonne
                 {
                     listCurseurs[0].setIndice(listCurseurs[0].getIndice() - 1);
@@ -239,7 +217,6 @@ namespace TemplateJeu
                 listCurseurs[0].setPosition(bnBox[listCurseurs[0].getIndice()].getPosition().X + listCurseurs[0].getDecalageX(),
                                             bnBox[listCurseurs[0].getIndice()].getPosition().Y + listCurseurs[0].getDecalageY());
             }
-            #endregion
 
             if (MoteurDeJeu.InstanceMDJ.kbState.IsKeyDown(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheGauche)
                 && MoteurDeJeu.InstanceMDJ.OldKbState.IsKeyUp(MoteurDeJeu.InstanceMDJ.panelTouches[0].ToucheGauche))
@@ -285,8 +262,6 @@ namespace TemplateJeu
             {
                 bnBox[listCurseurs[0].getIndice()].onClick();
             }
-
-            popoposition = DetectPositionInMatrix();
         }
     }
 }

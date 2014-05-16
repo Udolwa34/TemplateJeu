@@ -14,7 +14,6 @@ namespace TemplateJeu
 {
     abstract class MenuSimple : Menu
     {
-
         public MenuSimple(string nom, Rectangle position, string design)
             : base(nom,position,design)
         {
