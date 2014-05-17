@@ -22,8 +22,8 @@ namespace TemplateJeu
         }
         public override void fillBnBox()
         {
-            bnBox.Add(new Bouton("Menus/MenuPrincipal/BTN_Jouer", new Rectangle(20, 20, 20, 20), "MP_Quitter_Oui"));
-            bnBox.Add(new Bouton("Menus/MenuPrincipal/BTN_Options", new Rectangle(60, 20, 20, 20), "MP_Quitter_Non"));
+            bnBox.Add(new Bouton("Menus/MenuPrincipal/BTN_Jouer", new Rectangle(getPosition().X + 20, getPosition().X + 20, 20, 20), "MP_Quitter_Oui"));
+            bnBox.Add(new Bouton("Menus/MenuPrincipal/BTN_Options", new Rectangle(getPosition().X + 60, getPosition().X + 20, 20, 20), "MP_Quitter_Non"));
         }
         public override void fillListCurseurs()
         {

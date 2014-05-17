@@ -35,14 +35,14 @@ namespace TemplateJeu
                     //Passe au menu principal et dépile cet écran de la liste.
                     EcranPassif LogoMono = new EcranPresentationStudio("LogoMono", new Rectangle(0, 0, MoteurDeJeu.InstanceMDJ.widthFenetre, MoteurDeJeu.InstanceMDJ.heightFenetre), "Menus/EcranDev2");
                     MoteurDeJeu.InstanceMDJ.screenManager.depiler();
-                    MoteurDeJeu.InstanceMDJ.screenManager.empiler(LogoMono as Ecran);
+                    MoteurDeJeu.InstanceMDJ.screenManager.empilerPrint(LogoMono as Ecran);
                 }
                 else if (getNom() == "LogoMono")
                 {
                     //Passe au menu principal et dépile cet écran de la liste.
                     MenuPrincipal menuPrincipal = new MenuPrincipal("Menu", new Rectangle(0, 0, MoteurDeJeu.InstanceMDJ.widthFenetre, MoteurDeJeu.InstanceMDJ.heightFenetre), "Menus/MenuPrincipal/MenuPrincipal");
                     MoteurDeJeu.InstanceMDJ.screenManager.depiler();
-                    MoteurDeJeu.InstanceMDJ.screenManager.empiler(menuPrincipal as Ecran);
+                    MoteurDeJeu.InstanceMDJ.screenManager.empilerPrint(menuPrincipal as Ecran);
                 }
             }
         }

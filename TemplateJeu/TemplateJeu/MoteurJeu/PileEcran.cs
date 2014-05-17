@@ -19,15 +19,28 @@ namespace TemplateJeu
             return Ecrans.Last();
         }
 
+        public void empilerPrint(Ecran nvo)
+        {        
+            Ecrans.Add(nvo);
+        }
+
         public void empiler(Ecran nvo)
         {
+            getLast().setPrint(false);
             Ecrans.Add(nvo);
         }
 
         public void depiler()
         {
-            if (Ecrans.Count()!=0)
-            Ecrans.RemoveAt(Ecrans.Count() - 1);
+            if (Ecrans.Count() != 0)
+            {
+                Ecrans.RemoveAt(Ecrans.Count() - 1);
+                if (Ecrans.Count() != 0)
+                {
+                    getLast().setPrint(true);
+                }
+            }
+            
         }
 
         public void viderPile()

@@ -31,7 +31,7 @@ namespace TemplateJeu
             MoteurDeJeu.InstanceMDJ.widthFenetre = Window.ClientBounds.Width;
             MoteurDeJeu.InstanceMDJ.heightFenetre = Window.ClientBounds.Height;
             EcranPassif LogoMono = new EcranPresentationStudio("LogoStudio", new Rectangle(0, 0, MoteurDeJeu.InstanceMDJ.widthFenetre, MoteurDeJeu.InstanceMDJ.heightFenetre), "Menus/EcranDev");
-            MoteurDeJeu.InstanceMDJ.screenManager.empiler(LogoMono as Ecran);
+            MoteurDeJeu.InstanceMDJ.screenManager.empilerPrint(LogoMono as Ecran);
         }
 
     
