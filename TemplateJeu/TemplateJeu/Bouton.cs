@@ -63,8 +63,8 @@ namespace TemplateJeu
             {
                 //Passe au menu choix personnages
                 MoteurDeJeu.InstanceMDJ.screenManager.getLast().setPrint(true);
-                MenuDouble ChoixPersos = new MenuChoixPerso("Menu", new Rectangle(0, 0, MoteurDeJeu.InstanceMDJ.widthFenetre, MoteurDeJeu.InstanceMDJ.heightFenetre), "Menu", 10, 7);
-                MoteurDeJeu.InstanceMDJ.screenManager.empiler(ChoixPersos as Ecran);
+                MenuSimple menuQuitter = new MenuPrincipal_Quitter("MenuQuitter", new Rectangle(50, 50, 500, 500), "Menu");
+                MoteurDeJeu.InstanceMDJ.screenManager.empiler(menuQuitter as Ecran);
             }
             else if (nom == "option")
             {

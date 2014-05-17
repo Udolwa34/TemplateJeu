@@ -65,6 +65,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Bouton.cs" />
+    <Compile Include="MenuPrincipal_Quitter.cs" />
     <Compile Include="Curseur.cs" />
     <Compile Include="Ecran.cs" />
     <Compile Include="EcranPresentationStudio.cs" />
