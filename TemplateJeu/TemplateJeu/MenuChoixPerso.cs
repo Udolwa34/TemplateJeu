@@ -15,7 +15,7 @@ namespace TemplateJeu
     class MenuChoixPerso : MenuDouble
     {
         public MenuChoixPerso(string nom, Rectangle position, string design)
-            : base(nom, position, design,2,4) // les deux int sont : nombre de colonnes , nombre de lignes
+            : base(nom, position, design,2,5) // les deux int sont : nombre de colonnes , nombre de lignes
         {
             fillBnBox();
             fillListCurseurs();
@@ -27,11 +27,13 @@ namespace TemplateJeu
             createBn("perso", new Rectangle(250, 175, 75, 75), "perso", 0);
             createBn("perso", new Rectangle(250, 275, 75, 75), "perso", 0);
             createBn("perso", new Rectangle(250, 375, 75, 75), "perso", 0);
+            createBn("Menus/BTN_Quitter", new Rectangle(50, 375, 75, 75), "ChoixPersoQuitter", 0);
 
             createBn("perso", new Rectangle(500, 75, 75, 75), "perso", 1);
             createBn("perso", new Rectangle(500, 175,75, 75), "perso", 1);
             createBn("perso", new Rectangle(500, 275,75, 75), "perso", 1);
             createBn("perso", new Rectangle(500, 375, 75, 75), "perso", 1);
+            createBn("Menus/BTN_Valider", new Rectangle(600, 375, 75, 75), "ChoixPersoValider", 1);
         }
 
         public override void fillListCurseurs()

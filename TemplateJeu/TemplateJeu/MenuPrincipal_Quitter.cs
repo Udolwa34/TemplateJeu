@@ -22,15 +22,17 @@ namespace TemplateJeu
         }
         public override void fillBnBox()
         {
-            bnBox.Add(new Bouton("Menus/MenuPrincipal/BTN_Jouer", new Rectangle(getPosition().X + 20, getPosition().X + 20, 20, 20), "MP_Quitter_Oui"));
-            bnBox.Add(new Bouton("Menus/MenuPrincipal/BTN_Options", new Rectangle(getPosition().X + 60, getPosition().X + 20, 20, 20), "MP_Quitter_Non"));
+            bnBox.Add(new Bouton("Menus/MenuPrincipal/BTN_Quit_Oui",
+                new Rectangle(getPosition().X + 20, getPosition().Y + getPosition().Height / 2 - 16, 154, 32), "MP_Quitter_Oui"));
+            bnBox.Add(new Bouton("Menus/MenuPrincipal/BTN_Quit_Non",
+                new Rectangle(getPosition().X + getPosition().Width / 2 + 20, getPosition().Y + getPosition().Height / 2 - 16, 154, 32), "MP_Quitter_Non"));
         }
         public override void fillListCurseurs()
         {
             int indice = 0;
-            listCurseurs.Add(new Curseur(MoteurDeJeu.InstanceMDJ.panelTextures[0], 
-                                    new Rectangle(bnBox[indice].getPosition().X, bnBox[indice].getPosition().Y, 20,16),
-                                    indice, -25, -3));
+            listCurseurs.Add(new Curseur("Menus/MenuPrincipal/Curseur_BTN_MP", 
+                                    new Rectangle(bnBox[indice].getPosition().X, bnBox[indice].getPosition().Y, 154, 32),
+                                    indice, 0, 0));
         }
     }
 }

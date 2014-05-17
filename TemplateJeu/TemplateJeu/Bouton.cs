@@ -59,12 +59,22 @@ namespace TemplateJeu
                 MenuDouble ChoixPersos = new MenuChoixPerso("Menu",new Rectangle(0,0,MoteurDeJeu.InstanceMDJ.widthFenetre, MoteurDeJeu.InstanceMDJ.heightFenetre),"Menu");
                 MoteurDeJeu.InstanceMDJ.screenManager.empiler(ChoixPersos as Ecran);
             }
-            if (nom == "MP_Quitter")
+            else if (nom == "MP_Quitter")
             {
-                //Passe au menu choix personnages
+                //Passe au menu quitter du menuPrincipal
                 MoteurDeJeu.InstanceMDJ.screenManager.getLast().setPrint(true);
-                MenuSimple menuQuitter = new MenuPrincipal_Quitter("MenuQuitter", new Rectangle(50, 50, 500, 500), "Menu");
-                MoteurDeJeu.InstanceMDJ.screenManager.empiler(menuQuitter as Ecran);
+                MenuSimple menuQuitter = new MenuPrincipal_Quitter("MenuQuitter", new Rectangle(MoteurDeJeu.InstanceMDJ.widthFenetre / 2 - 200, MoteurDeJeu.InstanceMDJ.heightFenetre / 2 - 50, 400, 100), "Menus/MenuPrincipal/MP_QuitterMenu");
+                MoteurDeJeu.InstanceMDJ.screenManager.empilerPrint(menuQuitter as Ecran);
+            }
+            else if (nom == "MP_Quitter_Oui")
+            {
+                //On quitte le jeu
+                
+            }
+            else if (nom == "MP_Quitter_Non")
+            {
+                //On sort du menu quitter du menuPrincipal
+                MoteurDeJeu.InstanceMDJ.screenManager.depiler();
             }
             else if (nom == "option")
             {
