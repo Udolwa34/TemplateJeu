@@ -70,6 +70,7 @@
     <Compile Include="EcranPresentationStudio.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="MenuChoixPerso.cs" />
     <Compile Include="MenuDouble.cs" />
     <Compile Include="MenuPrincipal.cs" />
     <Compile Include="MenuSimple.cs" />

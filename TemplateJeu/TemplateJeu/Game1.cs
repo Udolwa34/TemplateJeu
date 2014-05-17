@@ -30,9 +30,8 @@ namespace TemplateJeu
             base.Initialize();
             MoteurDeJeu.InstanceMDJ.widthFenetre = Window.ClientBounds.Width;
             MoteurDeJeu.InstanceMDJ.heightFenetre = Window.ClientBounds.Height;
-           // MenuPrincipal menuPrincipal = new MenuPrincipal("LogoStudio", new Rectangle(0, 0, MoteurDeJeu.InstanceMDJ.widthFenetre, MoteurDeJeu.InstanceMDJ.heightFenetre), "Menu");
-            MenuDouble menuPrincipal = new MenuDouble("Menu",new Rectangle(0,0,Window.ClientBounds.Width,Window.ClientBounds.Height),"Menu",10,7);
-            MoteurDeJeu.InstanceMDJ.screenManager.empiler(menuPrincipal as Ecran);
+            EcranPassif LogoMono = new EcranPresentationStudio("LogoStudio", new Rectangle(0, 0, MoteurDeJeu.InstanceMDJ.widthFenetre, MoteurDeJeu.InstanceMDJ.heightFenetre), "Menus/EcranDev");
+            MoteurDeJeu.InstanceMDJ.screenManager.empiler(LogoMono as Ecran);
         }
 
     

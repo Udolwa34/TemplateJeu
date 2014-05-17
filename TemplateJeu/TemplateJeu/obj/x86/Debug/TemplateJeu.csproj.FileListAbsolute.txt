@@ -79,3 +79,4 @@ C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJ
 C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJeu\obj\x86\Debug\TemplateJeu.application
 C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJeu\obj\x86\Debug\TemplateJeu.csprojResolveAssemblyReference.cache
 C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Polices\ArialFont.xnb
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Polices\ArialFont.xnb

@@ -53,9 +53,23 @@ namespace TemplateJeu
         public void onClick()
         {
             string nom = this.getNom();
-            /*if (nom == "Bouton1")
+            if (nom == "MP_Jouer")
             {
-            }*/
+                //Passe au menu choix personnages
+                MenuDouble ChoixPersos = new MenuChoixPerso("Menu",new Rectangle(0,0,MoteurDeJeu.InstanceMDJ.widthFenetre, MoteurDeJeu.InstanceMDJ.heightFenetre),"Menu",10,7);
+                MoteurDeJeu.InstanceMDJ.screenManager.empiler(ChoixPersos as Ecran);
+            }
+            if (nom == "MP_Quitter")
+            {
+                //Passe au menu choix personnages
+                MoteurDeJeu.InstanceMDJ.screenManager.getLast().setPrint(true);
+                MenuDouble ChoixPersos = new MenuChoixPerso("Menu", new Rectangle(0, 0, MoteurDeJeu.InstanceMDJ.widthFenetre, MoteurDeJeu.InstanceMDJ.heightFenetre), "Menu", 10, 7);
+                MoteurDeJeu.InstanceMDJ.screenManager.empiler(ChoixPersos as Ecran);
+            }
+            else if (nom == "option")
+            {
+                MoteurDeJeu.InstanceMDJ.screenManager.depiler();
+            }
         }
     }
 }
