@@ -80,3 +80,7 @@ C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJ
 C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJeu\obj\x86\Debug\TemplateJeu.csprojResolveAssemblyReference.cache
 C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Polices\ArialFont.xnb
 C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Polices\ArialFont.xnb
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menus\MenuPrincipal\Curseur_BTN_MP.png
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menus\MenuPrincipal\MP_QuitterMenu.jpg
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menus\MenuPrincipal\BTN_Quit_Non.png
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menus\MenuPrincipal\BTN_Quit_Oui.png
