@@ -127,3 +127,4 @@ C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windo
 C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menus\MenuPrincipal\MP_QuitterMenu.jpg
 C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menus\BTN_Quitter.png
 C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menus\BTN_Valider.png
+C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\obj\x86\Debug\TemplateJeu.csprojResolveAssemblyReference.cache
