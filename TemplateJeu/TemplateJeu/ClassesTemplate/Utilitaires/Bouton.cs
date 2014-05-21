@@ -80,6 +80,10 @@ namespace TemplateJeu
             {
                 MoteurDeJeu.InstanceMDJ.screenManager.depiler();
             }
+            else if (nom == "ChoixPersoQuitter")
+            {
+                MoteurDeJeu.InstanceMDJ.screenManager.depiler();
+            }
         }
     }
 }

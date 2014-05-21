@@ -1,4 +1,3 @@
-C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\obj\x86\Debug\TemplateJeu.csprojResolveAssemblyReference.cache
 C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\TemplateJeu.exe
 C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\TemplateJeu.pdb
 C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\MonoGame.Framework.dll
@@ -128,3 +127,11 @@ C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windo
 C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menus\BTN_Quitter.png
 C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menus\BTN_Valider.png
 C:\Users\Corentin\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\obj\x86\Debug\TemplateJeu.csprojResolveAssemblyReference.cache
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menus\MenuPrincipal\BTN_Quit_Non.png
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menus\MenuPrincipal\BTN_Quit_Oui.png
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menus\MenuPrincipal\Curseur_BTN_MP.png
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menus\MenuPrincipal\MP_QuitterMenu.jpg
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menus\BTN_Quitter.png
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\Menus\BTN_Valider.png
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\bin\Windows\Debug\Content\Textures\perso.jpg
+C:\Users\Udolwa\Documents\GitHub\TemplateJeu\TemplateJeu\TemplateJeu\obj\x86\Debug\TemplateJeu.csprojResolveAssemblyReference.cache

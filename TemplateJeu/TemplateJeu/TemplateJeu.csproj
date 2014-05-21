@@ -64,21 +64,21 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Bouton.cs" />
-    <Compile Include="MenuPrincipal_Quitter.cs" />
-    <Compile Include="Curseur.cs" />
-    <Compile Include="Ecran.cs" />
-    <Compile Include="EcranPresentationStudio.cs" />
+    <Compile Include="ClassesTemplate\Utilitaires\Bouton.cs" />
+    <Compile Include="ClassesTemplate\Ecrans\Menus\MenusSimple\MenuPrincipal_Quitter.cs" />
+    <Compile Include="ClassesTemplate\Utilitaires\Curseur.cs" />
+    <Compile Include="ClassesTemplate\Ecrans\Ecran.cs" />
+    <Compile Include="ClassesTemplate\Ecrans\EcransStatique\EcranPresentationStudio.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="MenuChoixPerso.cs" />
-    <Compile Include="MenuDouble.cs" />
-    <Compile Include="MenuPrincipal.cs" />
-    <Compile Include="MenuSimple.cs" />
-    <Compile Include="EcranPassif.cs" />
-    <Compile Include="MoteurJeu\DispositionTouches.cs" />
-    <Compile Include="MoteurJeu\MoteurDeJeu.cs" />
-    <Compile Include="MoteurJeu\PileEcran.cs" />
+    <Compile Include="ClassesTemplate\Ecrans\Menus\Menu.cs" />
+    <Compile Include="ClassesTemplate\Ecrans\Menus\MenusDouble\MenuChoixPerso.cs" />
+    <Compile Include="ClassesTemplate\Ecrans\Menus\MenusDouble\MenuDouble.cs" />
+    <Compile Include="ClassesTemplate\Ecrans\Menus\MenusSimple\MenuPrincipal.cs" />
+    <Compile Include="ClassesTemplate\Ecrans\Menus\MenusSimple\MenuSimple.cs" />
+    <Compile Include="ClassesTemplate\Ecrans\EcransStatique\EcranPassif.cs" />
+    <Compile Include="ClassesTemplate\MoteurJeu\DispositionTouches.cs" />
+    <Compile Include="ClassesTemplate\MoteurJeu\MoteurDeJeu.cs" />
+    <Compile Include="ClassesTemplate\MoteurJeu\PileEcran.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

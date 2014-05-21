@@ -57,8 +57,6 @@ namespace TemplateJeu
                 return 0;
         }
 
-        
-
         override public void Update()
         {
             base.Update();
@@ -70,7 +68,7 @@ namespace TemplateJeu
             base.Draw();
          }
       
-         private int[] DetectPositionInMatrix()
+        private int[] DetectPositionInMatrix()
          {
              int[] position = new int[2];
              int indexLigne = 0, indexColonne = 0;
